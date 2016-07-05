@@ -54,26 +54,13 @@ exports.findByCityAndState = function(city, state) {
 
 exports.findInSentence = function(sentence, limit) {
   var result = [];
-  for (var _iterator = locations, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-    var _ref;
-
-    if (_isArray) {
-      if (_i >= _iterator.length) break;
-      _ref = _iterator[_i++];
-    } else {
-      _i = _iterator.next();
-      if (_i.done) break;
-      _ref = _i.value;
-    }
-
-    var location = _ref;
-    
+  for (var location of locations) {
     if (!!location.city && !!location.zipcode && !!location.state_abbr && !!location.state) {
-      var regex = new RegExp('\\b(' + location.city + '|' + location.zipcode + '|' + location.state + ')\\b', 'ig');
+      var regex = new RegExp(`\\b(${location.city}|${location.zipcode}|${location.state})\\b`, 'ig');
       if (sentence.match(regex)) {
         result.push(location);
-        if (result.length === limit || locations.length) {
-          result;
+        if (result.length === limit) {
+          return result;
         }
       }
     }
