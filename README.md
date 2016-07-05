@@ -1,12 +1,6 @@
-# Cities
+# Smart City Finder
 
-[![Circle CI](https://circleci.com/gh/sjlu/cities.svg?style=svg)](https://circleci.com/gh/sjlu/cities)
-
-Cities is an easy to use Node.js library to allow you to lookup a city by it's zipcode or by a set
-of GPS coordinates (reverse geocoding).
-
-At the moment, this package only supports US cities only. There are plans to extend this in the
-next version.
+This package is an extension of the already existing cities with additional automated options to research cities through regex;
 
 ## Usage
 
@@ -25,7 +19,7 @@ to get locations.
 ### Install
 
 ```
-npm install cities --save
+npm install smart-city-finder --save
 ```
 
 ### Usage
@@ -80,7 +74,7 @@ A sample response or object that this module returns looks like this.
         state: "New Jersey"
     }
 
-When using the ```findInSentence``` function this module will return an array of objects instead. 
+When using the ```findInSentence``` function this module will return an array of objects instead.
 
 ## License
 
