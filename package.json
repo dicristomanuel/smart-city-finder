@@ -1,7 +1,7 @@
 {
   "name": "smart-city-finder",
   "description": "find city names, states and coordinates",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "main": "lib/index.js",
   "author": "Manuel Di Cristo",
   "dependencies": {
