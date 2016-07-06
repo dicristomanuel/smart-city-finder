@@ -2,19 +2,6 @@
 
 This package is an extension of the already existing cities with additional automated options to research cities through regex;
 
-## Usage
-
-### Webservice
-
-Like any node.js application.
-
-```
-npm install
-```
-
-You can then visit `http://localhost:4000` with the endpoints `/gps/:lat/:lng` or `/zip/:zipcode`
-to get locations.
-
 ### Install
 
 ```
