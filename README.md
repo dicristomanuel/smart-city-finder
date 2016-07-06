@@ -10,7 +10,6 @@ Like any node.js application.
 
 ```
 npm install
-node server.js
 ```
 
 You can then visit `http://localhost:4000` with the endpoints `/gps/:lat/:lng` or `/zip/:zipcode`
@@ -25,7 +24,7 @@ npm install smart-city-finder --save
 ### Usage
 
 ```
-var cities = require('cities');
+var cities = require('smart-city-finder');
 ```
 
 #### Lookup by GPS coordinates

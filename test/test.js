@@ -1,5 +1,5 @@
 var assert = require("assert");
-var cities = require("../app");
+var cities = require("../lib/smart-city-finder");
 
 describe('gps_lookup()', function() {
   it('should give me 07946 based on exact location', function() {
