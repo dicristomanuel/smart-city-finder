@@ -1,7 +1,7 @@
 {
   "name": "smart-city-finder",
   "description": "find city names, states and coordinates",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "app.js",
   "author": "Manuel Di Cristo",
   "dependencies": {
@@ -23,7 +23,7 @@
   "repository": "https://github.com/dicristomanuel/smart-city-finder",
   "scripts": {
     "build": "babel src --out-dir lib",
-    "prepublish": "npm run compile",
+    "prepublish": "npm run build",
     "test": "mocha"
   },
   "license": "MIT"
