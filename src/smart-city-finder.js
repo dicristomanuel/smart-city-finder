@@ -8,22 +8,22 @@ require("babel-polyfill");
 var find = exports.find = _.partial(_.find, locations);
 var filter = exports.filter = _.partial(_.filter, locations);
 
-exports.zip_lookup = exports.zipLookup = function(zipcode) {
-  zipcode = _.padLeft(zipcode, 5, 0);
-  return find("zipcode", zipcode);
+export const zip_lookup = zipcode => {
+  const zipcodePad = _.padLeft(zipcode, 5, 0);
+  return find("zipcode", zipcodePad);
 };
 
-exports.gps_lookup = exports.gpsLookup = function(latitude, longitude) {
-  var minDistance = Infinity; // simulate infinity
-  var minLocation = {};
+export const gps_lookup = (latitude, longitude) => {
+  let minDistance = Infinity; // simulate infinity
+  let minLocation = {};
 
-  var start = {
-    latitude: latitude,
-    longitude: longitude
+  const start = {
+    latitude,
+    longitude
   }
 
   for (var i = 0; i < locations.length; i++) {
-    var distance = haversine(start, locations[i]);
+    const distance = haversine(start, locations[i]);
 
     if (distance < minDistance) {
       minLocation = locations[i];
@@ -35,7 +35,7 @@ exports.gps_lookup = exports.gpsLookup = function(latitude, longitude) {
   return minLocation;
 };
 
-exports.findByState = function(state) {
+export const findByState = (state) => {
   state = state.toUpperCase()
   return filter({state_abbr: state})
 }
