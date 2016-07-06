@@ -3,6 +3,8 @@ var locations = require('../locations');
 var haversine = require('haversine');
 var _ = require('lodash');
 
+require("babel-polyfill");
+
 var find = exports.find = _.partial(_.find, locations);
 var filter = exports.filter = _.partial(_.filter, locations);
 
@@ -38,15 +40,12 @@ exports.findByState = function(state) {
   return filter({state_abbr: state})
 }
 
-exports.findByCityAndState = function(city, state) {
-  state = state.toUpperCase()
-  city = city.toUpperCase()
-
-  var cities = filter({
-    state_abbr: state
+export const findByCityAndState = (city, state) => {
+  const cities = filter({
+    state_abbr: state.toUpperCase()
   })
   return _.find(cities, function(c) {
-    return c.city.toUpperCase() === city
+    return c.city.toUpperCase() === city.toUpperCase()
   })
 }
 
