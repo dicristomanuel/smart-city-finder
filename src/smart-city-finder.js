@@ -1,5 +1,3 @@
-'use strict';
-
 var fs = require('fs');
 var locations = require('../locations');
 var haversine = require('haversine');
@@ -52,11 +50,11 @@ exports.findByCityAndState = function(city, state) {
   })
 }
 
-exports.findInSentence = function(sentence, limit) {
-  var result = [];
-  for (var location of locations) {
+export const findInSentence = (sentence, limit) => {
+  let result = [];
+  for (let location of locations) {
     if (!!location.city && !!location.zipcode && !!location.state_abbr && !!location.state) {
-      var regex = new RegExp(`\\b(${location.city}|${location.zipcode}|${location.state})\\b`, 'ig');
+      let regex = new RegExp(`\\b(${location.city}|${location.zipcode}|${location.state})\\b`, 'ig');
       if (sentence.match(regex)) {
         result.push(location);
         if (result.length === limit) {
