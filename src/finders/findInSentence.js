@@ -1,11 +1,12 @@
 'use strict';
 
 import locations from '../../locations.json';
-import findMatch from '../helpers/findInSentenceHelper';
+import findMatch from '../helpers/findMatch';
+import firstTrueOf from '../helpers/firstTrueOf';
 
 export default (sentence, limit) => {
-  findMatch(sentence, 1)
+  return findMatch(sentence, limit)
   .then((locations) => {
-    return locations[0] || locations[1] || locations[2]
+    return firstTrueOf(locations)
   })
 };
