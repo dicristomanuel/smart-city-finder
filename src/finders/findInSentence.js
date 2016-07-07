@@ -1,5 +1,3 @@
-'use strict';
-
 import locations from '../../locations.json';
 import findMatch from '../helpers/findMatch';
 

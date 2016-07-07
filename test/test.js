@@ -33,26 +33,20 @@ describe('findByCityAndState', function() {
 
 describe('findInSentence', function() {
   it('should return two results containing city name', function() {
-    return cities.findInSentence('Traveling to Los Angeles', 2)
-    .then((locations) => {
-      assert.equal(locations[0].city, 'Los Angeles')
-      assert.equal(locations[1].city, 'Los Angeles')
-      assert.equal(locations.length, 2)
-    })
+    var places = cities.findInSentence('Traveling to Los Angeles', 2);
+    assert.equal(places[0].city, 'Los Angeles')
+    assert.equal(places[1].city, 'Los Angeles')
+    assert.equal(places.length, 2)
   })
+})
 
-  it('should find me a city from a zip code', function() {
-    return cities.findInSentence('Find grocery store 60601')
-    .then((location) => {
-      assert.equal(location[0].city, 'Chicago')
-      assert.equal(location[0].state, 'Illinois')
-    })
-  })
+it('should find me a city from a zip code', function() {
+  var places = cities.findInSentence('Find grocery store 60601');
+  assert.equal(places[0].city, 'Chicago')
+  assert.equal(places[0].state, 'Illinois')
+})
 
-  it('should find me a city from a state name', function() {
-    return cities.findInSentence('We got lost in Montana')
-    .then((location) => {
-      assert.equal(location[0].state, 'Montana')
-    })
-  })
+it('should find me a city from a state name', function() {
+  var places = cities.findInSentence('We got lost in Montana');
+  assert.equal(places[0].state, 'Montana')
 })

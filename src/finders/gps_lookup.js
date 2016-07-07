@@ -1,4 +1,4 @@
-'use strict';
+
 
 import haversine from 'haversine';
 import locations from '../../locations.json';

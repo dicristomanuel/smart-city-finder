@@ -1,5 +1,3 @@
-'use strict';
-
 require('babel-polyfill');
 
 export { default as zip_lookup } from './finders/zip_lookup';

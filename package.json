@@ -1,7 +1,7 @@
 {
   "name": "smart-city-finder",
   "description": "find city names, states and coordinates",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "lib/index.js",
   "author": "Manuel Di Cristo",
   "dependencies": {
@@ -12,8 +12,6 @@
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
-    "babel-plugin-syntax-async-functions": "^6.8.0",
-    "babel-plugin-transform-runtime": "^6.9.0",
     "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",
@@ -26,11 +24,12 @@
   },
   "repository": "https://github.com/dicristomanuel/smart-city-finder",
   "scripts": {
+    "start": "node example.js",
     "debug": "node debug example.js",
-    "build": "babel src --presets babel-preset-es2015 --out-dir lib",
-    "prepublish": "npm run build",
     "test": "mocha",
-    "debug-test": "mocha debug test/test.js -R spec"
+    "debug-test": "mocha debug test/test.js -R spec",
+    "build": "babel src --presets babel-preset-es2015 --out-dir lib",
+    "prepublish": "npm run build"
   },
   "license": "MIT"
 }
